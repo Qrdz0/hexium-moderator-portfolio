@@ -119,6 +119,7 @@
     h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; }
     .prose { max-width: 62ch; font-size: 18px; color: var(--text-2); }
     .prose strong { color: var(--text); font-weight: 500; }
+    .stack { display: grid; gap: 16px; }
 
     .path { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
     .path li { display: flex; gap: 16px; align-items: baseline; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
@@ -130,6 +131,20 @@
     .stat .fig { display: block; font-size: 32px; white-space: nowrap; line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
     .stat .fig.key { color: var(--accent); }
     .stat p { margin-top: 8px; color: var(--text-2); }
+
+    .timer { grid-column: 1 / -1; }
+    .timer .timer-label { margin: 0 0 16px; color: var(--text-2); }
+    .timer .mono { margin-top: 16px; color: var(--text-3); }
+    .clock {
+      display: flex; align-items: flex-start; gap: clamp(4px, 1.5vw, 16px);
+      font-family: var(--display);
+      font-size: clamp(32px, 10vw, 64px); line-height: 1; font-weight: 500;
+      font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+    }
+    .clock .n { color: var(--accent); }
+    .clock .sep { color: var(--text-3); }
+    .seg { display: grid; justify-items: start; gap: 8px; }
+    .seg .u { font: 400 12px/1 var(--mono); letter-spacing: 0; color: var(--text-3); }
 
 
     /* Links */
@@ -146,8 +161,15 @@
     .link-list a:hover { background: var(--surface-2); border-color: var(--line-strong); }
 
     footer { padding: 32px 0 48px; border-top: 1px solid var(--line); }
-    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+    footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
     footer p { color: var(--text-3); font-size: 14px; }
+    .legal { display: flex; gap: 24px; }
+    .legal a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      color: var(--text-2); font-size: 14px; text-decoration: none;
+      transition: color 150ms var(--ease);
+    }
+    .legal a:hover { color: var(--text); }
 
     @media (min-width: 768px) {
       .wrap { padding: 0 32px; }
@@ -215,16 +237,26 @@
       <div class="wrap">
         <h2 id="journey-title">The journey</h2>
         <div>
-          <p class="prose">
-            My journey in revivals started on <strong>Korone/Pekora</strong>, a massive platform where I met Emp and helped
-            test a custom sword game for him. When Emp moved on to build Hexium, I followed. Now, as a
-            <strong>Senior Moderator at Hexium</strong>, I've spent the last 3 months watching the economy grow,
-            the numbers go up, and helping manage a massive community of 12k+ users.
-          </p>
+          <div class="prose stack">
+            <p>
+              When Hexium first launched, I was honestly scared to try it. But then I got invited and recommended for the
+              staff team. I joined when the community was just <strong>100 to 300 people</strong>. I've been here ever
+              since—watching the economy grow, seeing restocks, and watching new ideas come to life.
+            </p>
+            <p>
+              Along the way, I met incredible people like <strong>Yay, Ritual, Janek, Nan, Jug, Hate, Tae, Larp, Saint,
+              and Kill</strong>. Their feedback and the community's support genuinely helped me change in a good way.
+              I really enjoy moderating here. (Fun fact: Tae used to own Roskid—it was peak, but sadly we didn't get clients).
+            </p>
+            <p>
+              My journey originally started on <strong>Korone/Pekora</strong> where I met Emp and tested a custom sword
+              game for him, which eventually led me here.
+            </p>
+          </div>
           <ol class="path" style="margin-top: 32px">
             <li><span class="mono">Then</span><span>Korone/Pekora, testing Emp's custom sword game</span></li>
-            <li><span class="mono">Next</span><span>Followed Emp to build Hexium</span></li>
-            <li class="now"><span class="mono">Now</span><span>Senior Moderator at Hexium</span></li>
+            <li><span class="mono">Joined</span><span>Hexium staff, at 100 to 300 members</span></li>
+            <li class="now"><span class="mono">Now</span><span>Senior Moderator, 12k+ members</span></li>
           </ol>
         </div>
       </div>
@@ -235,8 +267,20 @@
         <h2 id="work-title">What I do</h2>
         <div style="display: grid; gap: 40px">
           <div class="stats">
-            <div class="stat"><span class="fig">3 months</span><p>Active on the Hexium staff team</p></div>
-            <div class="stat"><span class="fig key">12k+</span><p>Community members looked after</p></div>
+            <div class="stat timer">
+              <p class="timer-label">Time Served @ Hexium</p>
+              <div class="clock" role="timer" aria-label="Time served at Hexium since 20 August 2026">
+                <span class="seg"><span class="n" id="t-d">00</span><span class="u">days</span></span>
+                <span class="sep" aria-hidden="true">:</span>
+                <span class="seg"><span class="n" id="t-h">00</span><span class="u">hrs</span></span>
+                <span class="sep" aria-hidden="true">:</span>
+                <span class="seg"><span class="n" id="t-m">00</span><span class="u">min</span></span>
+                <span class="sep" aria-hidden="true">:</span>
+                <span class="seg"><span class="n" id="t-s">00</span><span class="u">sec</span></span>
+              </div>
+              <p class="mono">Since 20 August 2026</p>
+            </div>
+            <div class="stat"><span class="fig">12k+</span><p>Community members looked after</p></div>
             <div class="stat"><span class="fig">Economy</span><p>Growth tracked and managed</p></div>
           </div>
           <p class="prose">
@@ -265,11 +309,30 @@
   <footer>
     <div class="wrap">
       <p>Built by Qrdz. © 2026 VibeCode Labs.</p>
-      <p class="mono">Senior Moderator @ Hexium</p>
+      <nav class="legal" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </nav>
     </div>
   </footer>
 
   <script>
+    (() => {
+      // shortcut: placeholder join date (20 Aug 2026, local time), swap for the real one when known
+      const start = new Date(2026, 7, 20).getTime();
+      const out = ['d', 'h', 'm', 's'].map((k) => document.getElementById(`t-${k}`));
+      const pad = (n) => String(n).padStart(2, '0');
+
+      const tick = () => {
+        const total = Math.max(0, Math.floor((Date.now() - start) / 1000));
+        const parts = [Math.floor(total / 86400), Math.floor(total / 3600) % 24, Math.floor(total / 60) % 60, total % 60];
+        parts.forEach((v, i) => { out[i].textContent = pad(v); });
+      };
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+
     (() => {
       const canvas = document.getElementById('snow');
       const ctx = canvas.getContext('2d');
