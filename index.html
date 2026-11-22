@@ -269,7 +269,7 @@
           <div class="stats">
             <div class="stat timer">
               <p class="timer-label">Time Served @ Hexium</p>
-              <div class="clock" role="timer" aria-label="Time served at Hexium since 20 August 2026">
+              <div class="clock" role="timer" aria-label="Time served at Hexium since 18 August 2026">
                 <span class="seg"><span class="n" id="t-d">00</span><span class="u">days</span></span>
                 <span class="sep" aria-hidden="true">:</span>
                 <span class="seg"><span class="n" id="t-h">00</span><span class="u">hrs</span></span>
@@ -278,7 +278,7 @@
                 <span class="sep" aria-hidden="true">:</span>
                 <span class="seg"><span class="n" id="t-s">00</span><span class="u">sec</span></span>
               </div>
-              <p class="mono">Since 20 August 2026</p>
+              <p class="mono">Hired on August 18, 2026</p>
             </div>
             <div class="stat"><span class="fig">12k+</span><p>Community members looked after</p></div>
             <div class="stat"><span class="fig">Economy</span><p>Growth tracked and managed</p></div>
@@ -318,8 +318,8 @@
 
   <script>
     (() => {
-      // shortcut: placeholder join date (20 Aug 2026, local time), swap for the real one when known
-      const start = new Date(2026, 7, 20).getTime();
+      // Hired 18 Aug 2026 18:38 Belgian time (CEST, UTC+2), fixed offset so every visitor sees the same count
+      const start = Date.parse('2026-08-18T18:38:00+02:00');
       const out = ['d', 'h', 'm', 's'].map((k) => document.getElementById(`t-${k}`));
       const pad = (n) => String(n).padStart(2, '0');
 
