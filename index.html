@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senior Moderator at Hexium | Qrdz</title>
+  <meta name="description" content="Qrdz, Senior Moderator at Hexium. Three months of handling disputes, managing the economy and keeping a 12k+ member community safe.">
+  <meta property="og:title" content="Senior Moderator at Hexium | Qrdz">
+  <meta property="og:description" content="Three months of keeping the peace, growing the economy and building the Hexium community.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#09090b">
+  <style>
+    :root {
+      --bg: #09090b;
+      --surface: #111113;
+      --surface-2: #18181b;
+      --line: rgb(250 250 250 / 0.08);
+      --line-strong: rgb(250 250 250 / 0.14);
+      --text: #fafafa;
+      --text-2: #a1a1aa;
+      --text-3: #8b8b94;
+      --accent: #06b6d4;
+      --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --display: "Space Grotesk", var(--font);
+      --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+      --ease: cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 400 16px/1.6 var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3, .fig, .mark, .logo-big { font-family: var(--display); }
+
+    /* Snow sits behind content and never takes clicks */
+    #snow { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .top, main, footer { position: relative; z-index: 1; }
+
+    .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .mono { font-family: var(--mono); font-size: 13px; color: var(--text-3); }
+
+    /* Header */
+    .top { border-bottom: 1px solid var(--line); }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 500; text-decoration: none; }
+    .mark {
+      display: grid; place-items: center;
+      width: 28px; height: 28px; border-radius: 8px;
+      background: var(--text); color: var(--bg);
+      font-weight: 600; font-size: 15px; line-height: 1;
+    }
+
+    /* Hero */
+    .hero { padding: 64px 0 80px; }
+    .hero .wrap { display: grid; gap: 48px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 1.02;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+    h1 span { color: var(--accent); }
+    .lede { margin-top: 20px; max-width: 34ch; font-size: 18px; color: var(--text-2); }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 48px; padding: 0 20px; border-radius: 10px;
+      border: 1px solid var(--line-strong);
+      font-weight: 500; text-decoration: none;
+      transition: background-color 150ms var(--ease), border-color 150ms var(--ease), transform 100ms var(--ease);
+    }
+    .btn:hover { background: var(--surface-2); border-color: rgb(250 250 250 / 0.24); }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+    .btn-primary:hover { background: #e4e4e7; border-color: #e4e4e7; }
+    .btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.5; fill: none; }
+
+    /* Moderator card (hero visual) */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .card-head { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .card-head .mark { width: 48px; height: 48px; border-radius: 12px; font-size: 24px; }
+    .card-head strong { display: block; font-weight: 500; font-size: 18px; }
+    .role { color: var(--accent); font-size: 14px; }
+    .rows { margin: 0; padding: 8px 0 0; }
+    .rows div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .rows div:last-child { border-bottom: 0; padding-bottom: 0; }
+    .rows dt { color: var(--text-2); }
+    .rows dd { margin: 0; font-variant-numeric: tabular-nums; text-align: right; }
+
+    /* Sections */
+    section.block { padding: 80px 0; border-top: 1px solid var(--line); }
+    .block .wrap { display: grid; gap: 32px; }
+    h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; }
+    .prose { max-width: 62ch; font-size: 18px; color: var(--text-2); }
+    .prose strong { color: var(--text); font-weight: 500; }
+
+    .path { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .path li { display: flex; gap: 16px; align-items: baseline; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+    .path li .mono { min-width: 56px; }
+    .path .now { border-color: rgb(6 182 212 / 0.4); }
+
+    .stats { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .stat { padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+    .stat .fig { display: block; font-size: 32px; white-space: nowrap; line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .stat .fig.key { color: var(--accent); }
+    .stat p { margin-top: 8px; color: var(--text-2); }
+
+
+    /* Links */
+    .links-grid { display: grid; gap: 24px; align-items: center; }
+    .logo-big {
+      display: grid; place-items: center;
+      width: 96px; height: 96px; border-radius: 20px;
+      background: var(--text); color: var(--bg);
+      font-size: 56px; font-weight: 600; line-height: 1;
+    }
+    .link-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .link-list a {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      min-height: 56px; padding: 0 20px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+      text-decoration: none;
+      transition: background-color 150ms var(--ease), border-color 150ms var(--ease);
+    }
+    .link-list a:hover { background: var(--surface-2); border-color: var(--line-strong); }
+
+    footer { padding: 32px 0 48px; border-top: 1px solid var(--line); }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+    footer p { color: var(--text-3); font-size: 14px; }
+
+    @media (min-width: 768px) {
+      .wrap { padding: 0 32px; }
+      .hero { padding: 96px 0 112px; min-height: calc(100svh - 64px); display: flex; align-items: center; }
+      .hero .wrap { grid-template-columns: 1.3fr 1fr; gap: 64px; }
+    }
+
+    @media (min-width: 1024px) {
+      .block .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 64px; align-items: start; }
+      .links-grid { grid-template-columns: auto 1fr; gap: 40px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn, .link-list a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="https://hexium.wtf/users/36/profile" target="_blank" rel="noopener noreferrer">
+        <span class="mark" aria-hidden="true">H</span>Qrdz
+      </a>
+      <span class="mono">hexium.wtf/users/36</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow mono"><span class="dot" aria-hidden="true"></span>Qrdz · Hexium staff</p>
+          <h1 id="hero-title">Senior Moderator <span>@</span> Hexium</h1>
+          <p class="lede">3 months of keeping the peace, growing the economy, and building the community.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://hexium.wtf/users/36/profile" target="_blank" rel="noopener noreferrer">My profile</a>
+            <a class="btn" href="https://discord.gg/hexium" target="_blank" rel="noopener noreferrer">Join Discord</a>
+            <a class="btn" href="https://hexium.wtf" target="_blank" rel="noopener noreferrer">
+              Hexium.wtf
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Moderator summary">
+          <div class="card-head">
+            <span class="mark" aria-hidden="true">H</span>
+            <div>
+              <strong>Qrdz</strong>
+              <span class="role">Senior Moderator</span>
+            </div>
+          </div>
+          <dl class="rows">
+            <div><dt>Community</dt><dd>Hexium</dd></div>
+            <div><dt>Time on the team</dt><dd>3 months</dd></div>
+            <div><dt>Members</dt><dd>12k+</dd></div>
+            <div><dt>Came from</dt><dd>Korone/Pekora</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="journey-title">
+      <div class="wrap">
+        <h2 id="journey-title">The journey</h2>
+        <div>
+          <p class="prose">
+            My journey in revivals started on <strong>Korone/Pekora</strong>, a massive platform where I met Emp and helped
+            test a custom sword game for him. When Emp moved on to build Hexium, I followed. Now, as a
+            <strong>Senior Moderator at Hexium</strong>, I've spent the last 3 months watching the economy grow,
+            the numbers go up, and helping manage a massive community of 12k+ users.
+          </p>
+          <ol class="path" style="margin-top: 32px">
+            <li><span class="mono">Then</span><span>Korone/Pekora, testing Emp's custom sword game</span></li>
+            <li><span class="mono">Next</span><span>Followed Emp to build Hexium</span></li>
+            <li class="now"><span class="mono">Now</span><span>Senior Moderator at Hexium</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="work-title">
+      <div class="wrap">
+        <h2 id="work-title">What I do</h2>
+        <div style="display: grid; gap: 40px">
+          <div class="stats">
+            <div class="stat"><span class="fig">3 months</span><p>Active on the Hexium staff team</p></div>
+            <div class="stat"><span class="fig key">12k+</span><p>Community members looked after</p></div>
+            <div class="stat"><span class="fig">Economy</span><p>Growth tracked and managed</p></div>
+          </div>
+          <p class="prose">
+            Day to day, I handle disputes between players, keep an eye on the in-game economy so growth stays healthy,
+            and keep the server safe from exploiters.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="links-title">
+      <div class="wrap">
+        <h2 id="links-title">Find me on Hexium</h2>
+        <div class="links-grid">
+          <span class="logo-big" role="img" aria-label="Hexium logo">H</span>
+          <ul class="link-list">
+            <li><a href="https://hexium.wtf" target="_blank" rel="noopener noreferrer">Hexium.wtf <span class="mono">hexium.wtf</span></a></li>
+            <li><a href="https://discord.gg/hexium" target="_blank" rel="noopener noreferrer">Join the Discord <span class="mono">discord.gg/hexium</span></a></li>
+            <li><a href="https://hexium.wtf/users/36/profile" target="_blank" rel="noopener noreferrer">My profile <span class="mono">users/36</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Built by Qrdz. © 2026 VibeCode Labs.</p>
+      <p class="mono">Senior Moderator @ Hexium</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const canvas = document.getElementById('snow');
+      const ctx = canvas.getContext('2d');
+      if (!ctx || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const MAX = 60;
+      let w = 0, h = 0, flakes = [];
+
+      const make = (y) => ({
+        x: Math.random() * w,
+        y: y ?? Math.random() * h,
+        r: 0.6 + Math.random() * 1.4,
+        vy: 0.2 + Math.random() * 0.5,
+        drift: Math.random() * Math.PI * 2,
+        a: 0.15 + Math.random() * 0.35,
+      });
+
+      const resize = () => {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = window.innerWidth; h = window.innerHeight;
+        canvas.width = w * dpr; canvas.height = h * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        // fewer flakes on small screens, never more than MAX
+        const count = Math.min(MAX, Math.round(w / 24));
+        flakes = Array.from({ length: count }, () => make());
+      };
+
+      const tick = () => {
+        ctx.clearRect(0, 0, w, h);
+        for (const f of flakes) {
+          f.y += f.vy;
+          f.drift += 0.01;
+          f.x += Math.sin(f.drift) * 0.3;
+          if (f.y > h + 4) Object.assign(f, make(-4));
+          ctx.globalAlpha = f.a;
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+          ctx.fillStyle = '#fff';
+          ctx.fill();
+        }
+        requestAnimationFrame(tick);
+      };
+
+      window.addEventListener('resize', resize);
+      resize();
+      requestAnimationFrame(tick);
+    })();
+  </script>
+</body>
+</html>
